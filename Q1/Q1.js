@@ -4,32 +4,48 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.question('請輸入觀看人數', (strInput) => {
-    const input = confirmInput(strInput)
 
-    if (input) {
-        const numInput = Number(strInput)
-        const message = playingMovie(numInput);
-        console.log(message)
-    } else {
-        // 如果格式錯誤
-        console.log("請重新輸入")
+main();
+function main() {
+    rl.question('請輸入觀看人數', (strInput) => {
+        // 判斷輸入人數的格式（字串、負數、小數、NaN)
+        let confirmStatus = confirmFormat(strInput)
+        //  如果格式正確
+        if (confirmStatus) {
+            let playingResult = isPlayingMovie(Number(strInput));
+            console.log(playingResult);
+            // 關閉輸入介面
+            rl.close();
+            // 如果格式錯誤
+        } else {
+            //  重新輸入
+            main();
+        }
+    });
+}
+
+function confirmFormat(strInput) {
+    const isEmptyString = !strInput.length;
+    if (isEmptyString) {
+        console.log("空字串!! 請重新輸入")
     }
-    rl.close();
-});
-
-// 判斷輸入人數的格式（字串、負數、小數、NaN)
-function confirmInput(strInput) {
-    let isEmptyString = !strInput.length;
-    let isNegative = strInput < 0;
-    let isFloat = parseInt(strInput) < strInput;
-    let isString = Number.isNaN(Number(strInput));
+    const numInput = Number(strInput);
+    const isNegative = numInput < 0;
+    if (isNegative) {
+        console.log("負數!! 請重新輸入")
+    }
+    const isFloat = parseInt(numInput) < numInput;
+    if (isFloat) {
+        console.log("小數!! 請重新輸入")
+    }
+    const isString = Number.isNaN(numInput);
+    if (isString) {
+        console.log("字串!! 請重新輸入")
+    }
     return !(isNegative || isFloat || isString || isEmptyString);
 }
 
-//  如果格式正確
-
-function playingMovie(numInput) {
+function isPlayingMovie(numInput) {
     if (!numInput) {
         // 如果人數為0
         //     顯示不播放
