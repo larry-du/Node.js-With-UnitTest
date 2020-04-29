@@ -5,14 +5,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-main();
-function main() {
+; (function main() {
     rl.question('請輸入觀看人數', (strInput) => {
         // 判斷輸入人數的格式（字串、負數、小數、NaN)
-        let confirmStatus = confirmFormat(strInput)
+        const confirmStatus = confirmFormat(strInput);
         //  如果格式正確
         if (confirmStatus) {
-            let playingResult = isPlayingMovie(Number(strInput));
+            const playingResult = isPlayingMovie(Number(strInput));
             console.log(playingResult);
             // 關閉輸入介面
             rl.close();
@@ -22,7 +21,7 @@ function main() {
             main();
         }
     });
-}
+})();
 
 function confirmFormat(strInput) {
     const isEmptyString = !strInput.length;
