@@ -36,6 +36,7 @@ function confirmFormat(strInput) {
     }
 }
 
+
 function ageDiscount(age) {
     const ticketsPrice = 400
     return age <= 6 || age >= 65 ? ticketsPrice / 2 : ticketsPrice
