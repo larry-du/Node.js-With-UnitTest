@@ -12,7 +12,8 @@ const rl = (function readline() {
         rl.question('請輸入第二組整數:', strInput2 => {
             // const [strInput1, strInput2] = strInput.split(" ");
             // // 判斷格式是否正確（小數 字串 NaN 空字串）
-            const confirmStatus = confirmFormat(strInput1, strInput2);
+            const formatArray = [strInput1, strInput2]
+            const confirmStatus = confirmFormat(formatArray);
             //  如果格式正確
             if (confirmStatus) {
                 //輸入值分別/3
@@ -32,22 +33,22 @@ const rl = (function readline() {
     });
 })(rl);
 
-function confirmFormat(strInput1, strInput2) {
-    const isEmptyString = !strInput1.trim().length || !strInput2.trim().length;
-    if (isEmptyString) {
-        console.log("請勿輸入空字串!! 請重新輸入");
+function confirmFormat(formatArray) {
+    for (let i = 0; i < formatArray.length; i++) {
+        const isEmptyString = !formatArray[i].trim().length;
+        if (isEmptyString) {
+            console.log(`!!`, `請勿輸入空字串!! 請重新輸入`);
+        }
+        const isFloat = parseInt(formatArray[i]) < formatArray[i];
+        if (isFloat) {
+            console.log(formatArray[i], `!!`, "請勿輸入小數!! 請重新輸入");
+        }
+        const isString = Number.isNaN(Number(formatArray[i]));
+        if (isString) {
+            console.log(formatArray[i], `!!`, "請勿輸入字串!! 請重新輸入");
+        }
+        return !(isEmptyString || isFloat || isString);
     }
-    const numInput1 = Number(strInput1);
-    const numInput2 = Number(strInput2);
-    const isFloat = parseInt(numInput1) < numInput1 || parseInt(numInput2) < numInput2;
-    if (isFloat) {
-        console.log("請勿輸入小數!! 請重新輸入");
-    }
-    const isString = Number.isNaN(numInput1) || Number.isNaN(numInput2);
-    if (isString) {
-        console.log("請勿輸入字串!! 請重新輸入");
-    }
-    return !(isEmptyString || isFloat || isString)
 }
 
 function remainder(numInput1, numInput2) {
