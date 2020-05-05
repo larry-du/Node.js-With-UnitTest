@@ -2,30 +2,59 @@ const { main } = require("./Q1");
 
 test('emptyStringToBeFalse', () => {
     const strInput = "";
-    expect(main(strInput)).toEqual({ status: false, errorMessage: "空字串!! 請重新輸入" });
+    const question = main(strInput);
+    const answer = {
+        status: false,
+        errorMessage: "空字串!! 請重新輸入"
+    }
+    expect(question).toEqual(answer);
 });
 test("negativeToBeFalse", () => {
     const strInput = "-2";
-    expect(main(strInput)).toEqual({ status: false, errorMessage: "負數!! 請重新輸入" });
+    const question = main(strInput);
+    const answer = {
+        status: false,
+        errorMessage: "負數!! 請重新輸入"
+    }
+    expect(question).toEqual(answer);
 });
 test("floatToBeFalse", () => {
     const strInput = "12.32423";
-    expect(main(strInput)).toEqual({ status: false, errorMessage: "小數!! 請重新輸入" });
+    const question = main(strInput);
+    const answer = {
+        status: false,
+        errorMessage: "小數!! 請重新輸入"
+    }
+    expect(question).toEqual(answer);
 });
 test("stringToBeFalse", () => {
     const strInput = "stringTest";
-    expect(main(strInput)).toEqual({ status: false, errorMessage: "字串!! 請重新輸入" });
+    const question = main(strInput);
+    const answer = {
+        status: false,
+        errorMessage: "字串!! 請重新輸入"
+    }
+    expect(question).toEqual(answer);
 });
 
 test('playMovie', () => {
     const strInput = "12";
-    expect(main(strInput)).toEqual({ status: true, playingMessage: "播放電影" });
+    const question = main(strInput);
+    const answer = {
+        status: true,
+        playingMessage: "播放電影"
+    }
+    expect(question).toEqual(answer);
 });
 test('doNotPlayMovie', () => {
     const strInput = "0";
-    expect(main(strInput)).toEqual({ status: true, playingMessage: "不播放電影" });
+    const answer = main(strInput);
+    const result = {
+        status: true,
+        playingMessage: "不播放電影"
+    }
+    expect(answer).toEqual(result);
 });
-
 // test("emptyStringToBeFalse", () => {
 //     const isEmptyString = "";
 //     expect(main(isEmptyString)).toBeFalsy();

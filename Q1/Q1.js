@@ -17,11 +17,18 @@ function main(strInput) {
     }
 }
 
+// let obj = {
+//     0: "空字串!! 請重新輸入",
+//     1: "負數!! 請重新輸入"
+// }
+
 function confirmFormat(strInput) {
     const isEmptyString = !strInput.length;
     if (isEmptyString) {
+        //return obj["0"]
         // console.log("空字串!! 請重新輸入")
         return "空字串!! 請重新輸入";
+        // return 0
     }
     const numInput = Number(strInput);
     const isNegative = numInput < 0;
@@ -56,7 +63,6 @@ function isPlayingMovie(numInput) {
         return "播放電影";
     }
 }
-
 
 module.exports = { main };
 
