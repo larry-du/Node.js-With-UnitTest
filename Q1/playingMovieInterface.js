@@ -11,7 +11,7 @@ const rl = require("./readline");
             return;
         } else {
             // 關閉輸入介面
-            console.log(playingMovieInterface["playingMessage"])
+            console.log(playingMovieInterface["playingMessage"]);
             rl.close();
         }
     });

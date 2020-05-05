@@ -1,59 +1,54 @@
 const { main } = require("./Q1");
 
-test('emptyStringToBeFalse', () => {
+test('emptyStringToBeFalse 空字串!! 請重新輸入', () => {
     const strInput = "";
-    const question = main(strInput);
-    const answer = {
+
+    const execute = main(strInput);
+    expect(execute).toEqual({
         status: false,
         errorMessage: "空字串!! 請重新輸入"
-    }
-    expect(question).toEqual(answer);
+    });
 });
-test("negativeToBeFalse", () => {
+test("negativeToBeFalse 負數!! 請重新輸入", () => {
     const strInput = "-2";
     const question = main(strInput);
-    const answer = {
+    expect(question).toEqual({
         status: false,
         errorMessage: "負數!! 請重新輸入"
-    }
-    expect(question).toEqual(answer);
+    });
 });
-test("floatToBeFalse", () => {
+test("floatToBeFalse 小數!! 請重新輸入", () => {
     const strInput = "12.32423";
     const question = main(strInput);
-    const answer = {
+    expect(question).toEqual({
         status: false,
         errorMessage: "小數!! 請重新輸入"
-    }
-    expect(question).toEqual(answer);
+    });
 });
-test("stringToBeFalse", () => {
+test("stringToBeFalse 字串!! 請重新輸入", () => {
     const strInput = "stringTest";
     const question = main(strInput);
-    const answer = {
+    expect(question).toEqual({
         status: false,
         errorMessage: "字串!! 請重新輸入"
-    }
-    expect(question).toEqual(answer);
+    });
 });
 
-test('playMovie', () => {
+test('playMovie 播放電影', () => {
     const strInput = "12";
     const question = main(strInput);
-    const answer = {
+    expect(question).toEqual({
         status: true,
         playingMessage: "播放電影"
-    }
-    expect(question).toEqual(answer);
+    });
 });
-test('doNotPlayMovie', () => {
+test('doNotPlayMovie 不播放電影', () => {
     const strInput = "0";
     const answer = main(strInput);
-    const result = {
+    expect(answer).toEqual({
         status: true,
         playingMessage: "不播放電影"
-    }
-    expect(answer).toEqual(result);
+    });
 });
 // test("emptyStringToBeFalse", () => {
 //     const isEmptyString = "";
