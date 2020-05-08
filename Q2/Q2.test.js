@@ -1,46 +1,43 @@
-const { main } = require("./Q2");
+const main = require("./Q2");
 
 test('emptyStringToBeFalse 空字串!! 請重新輸入', () => {
-    const arrInput = [" ", " "];
-    const execute = main(arrInput);
+    execute = main.setInput(" ")
     expect(execute).toEqual({
         status: false,
-        errorMessage: " !!請勿輸入空字串!! 請重新輸入"
+        errorMessage: " !!請勿輸入空字串!! 請重新輸入",
+        result: null
     });
 });
 
-test('emptyStringToBeFalse 小數!! 請重新輸入', () => {
-    const arrInput = ["12.3434", "12.423"];
-    const execute = main(arrInput);
+test('floatToBeFalse 小數!! 請重新輸入', () => {
+    const execute = main.setInput("12.12");
     expect(execute).toEqual({
         status: false,
-        errorMessage: "12.423!!請勿輸入小數!! 請重新輸入"
+        errorMessage: "12.12!!請勿輸入小數!! 請重新輸入",
+        result: null
     });
 });
 
-test('emptyStringToBeFalse 字串!! 請重新輸入', () => {
-    const arrInput = ["stringTest", "stringTest"];
-    const execute = main(arrInput);
+test('StringToBeFalse 字串!! 請重新輸入', () => {
+    const execute = main.setInput("stringTest");
     expect(execute).toEqual({
         status: false,
-        errorMessage: "stringTest!!請勿輸入字串!! 請重新輸入"
+        errorMessage: "stringTest!!請勿輸入字串!! 請重新輸入",
+        result: null
     });
 });
 
-test('SameRemainder 對3取餘數 餘數相同', () => {
-    const arrInput = ["12", "12"];
-    const execute = main(arrInput);
-    expect(execute).toEqual({
-        status: true,
-        result: "餘數相同"
-    });
+test('sameReminder 於數相同', () => {
+    main.setInput("12");
+    main.setInput("12");
+    const execute = main.resultOfDiv3();
+    expect(execute).toMatch("餘數相同");
 });
 
-test('SameRemainder 對3取餘數 餘數不相同', () => {
-    const arrInput = ["12", "13"];
-    const execute = main(arrInput);
-    expect(execute).toEqual({
-        status: true,
-        result: "餘數不相同"
-    });
+test('notSameReminder 於數不相同', () => {
+    main.setInput("12");
+    main.setInput("13");
+    const execute = main.resultOfDiv3();
+    expect(execute).toMatch("餘數不相同");
 });
+
