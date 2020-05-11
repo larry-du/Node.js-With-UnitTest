@@ -1,30 +1,64 @@
 //### 4. 輸入 n 印出 `1+2-3+4-5+6...n` 的算式與總和
-
-// 印出算式和總和
 // 輸入n
-sumResult(10);
-// 正偶數＋負奇數 ＝總和＋1
-function sumResult(number) {
-    // console.log(evenSum(number).result)
-    // console.log(oddSum(number).result)
-    // let aaa = [];
-    let arr = [];
-    let evenSumLen = evenSum(number).result.length - 1
-    for (let i = 0; i <= evenSumLen; i++) {
-        let plusEven = `+${evenSum(number).result[i]}`
-        let minusOdd = `-${oddSum(number).result[i]}`
-        arr.push(plusEven);
-        if (oddSum(number).result[i] === undefined) {
-            break
+function sumResult(strInput) {
+    //判斷格式
+    let confirmStatus = confirmFormat(strInput)
+    if (confirmStatus) {
+        return {
+            status: false,
+            result: null,
+            errorMessage: confirmStatus
         }
-        arr.push(minusOdd);
     }
-    let final = 1 + evenSum(number).sum + oddSum(number).sum
-    // console.log(arr, final)
-    console.log(`1${arr.join('')} = ${final}`)
+    // 正偶數＋負奇數 ＝總和＋1
+    equation(strInput)
+    return {
+        status: true,
+        result: equation(strInput),
+        errorMessage: null
+    }
 }
 
-// console.log(`1 + ${even[0]} - ${odd[0]}`)
+function equation(strInput) {
+    let equationArr = [];
+    let numInput = Number(strInput)
+    let evenSumLen = evenSum(numInput).result.length - 1
+    for (let i = 0; i <= evenSumLen; i++) {
+        let plusEven = `+${evenSum(numInput).result[i]}`
+        let minusOdd = `-${oddSum(numInput).result[i]}`
+        equationArr.push(plusEven);
+        if (oddSum(numInput).result[i] === undefined) {
+            break;
+        }
+        equationArr.push(minusOdd);
+    }
+    // 印出算式和總和
+    let calculationResult = 1 + evenSum(numInput).sum + oddSum(numInput).sum
+    let resultOfEquation = `1${equationArr.join('')} = ${calculationResult}`
+    return resultOfEquation
+}
+
+function confirmFormat(strInput) {
+    const isEmptyString = !strInput.trim().length;
+    if (isEmptyString) {
+        // console.log("空字串!! 請重新輸入")
+        return "空字串!! 請重新輸入";
+    }
+    const numInput = Number(strInput);
+    const isNegative = numInput < 0;
+    if (isNegative) {
+        return "負數!! 請重新輸入";
+    }
+    const isFloat = Math.floor(numInput) < numInput;
+    if (isFloat) {
+        return "小數!! 請重新輸入";
+    }
+    const isString = Number.isNaN(numInput);
+    if (isString) {
+        return "字串!! 請重新輸入";
+    }
+    return "";
+}
 
 function evenSum(n) {
     //正偶數相加
@@ -38,7 +72,6 @@ function evenSum(n) {
     }
     for (let i = 0; i <= result.length - 1; i++) {
         sum += result[i];
-        // console.log(`${result[i]}-`);
     }
     return {
         sum,
@@ -58,8 +91,6 @@ function oddSum(n) {
     }
     for (let i = 0; i <= result.length - 1; i++) {
         sum += result[i] * -1;
-        // sum = sum + result[i] * -1
-        // console.log(`${result[i]}+`)
     }
     return {
         sum,
@@ -67,3 +98,4 @@ function oddSum(n) {
     };
 }
 
+module.exports = sumResult;
