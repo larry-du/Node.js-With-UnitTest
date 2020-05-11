@@ -1,3 +1,5 @@
+//### 4. 輸入 n 印出 `1+2-3+4-5+6...n` 的算式與總和
+// 輸入n
 const sumResult = require("./Q4")
 const rl = require("./readline");
 
@@ -8,10 +10,10 @@ const rl = require("./readline");
             console.log(resultOfQuestion.errorMessage);
             askQuestion(rl);
             return;
-        } else {
-            // 關閉輸入介面
-            console.log(resultOfQuestion.result);
-            rl.close();
         }
+        // 關閉輸入介面
+        console.log(resultOfQuestion.result);
+        rl.close();
+
     });
 })(rl);

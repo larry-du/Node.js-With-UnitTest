@@ -1,5 +1,4 @@
-//### 4. 輸入 n 印出 `1+2-3+4-5+6...n` 的算式與總和
-// 輸入n
+
 function sumResult(strInput) {
     //判斷格式
     let confirmStatus = confirmFormat(strInput)

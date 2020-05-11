@@ -5,7 +5,8 @@ function main(strInput) {
         // 如果格式錯誤
         return {
             status: false,
-            errorMessage: confirmStatus
+            errorMessage: confirmStatus,
+            playingMessage: null
         };
     }
     //  如果格式正確
@@ -13,6 +14,7 @@ function main(strInput) {
     // console.log(playingResult);
     return {
         status: true,
+        errorMessage: null,
         playingMessage: playingStatus
     }
 }
@@ -23,7 +25,7 @@ function main(strInput) {
 // }
 
 function confirmFormat(strInput) {
-    const isEmptyString = !strInput.length;
+    const isEmptyString = !strInput.trim().length;
     if (isEmptyString) {
         //return obj["0"]
         // console.log("空字串!! 請重新輸入")
@@ -37,7 +39,7 @@ function confirmFormat(strInput) {
         return "負數!! 請重新輸入";
         // return 1;
     }
-    const isFloat = parseInt(numInput) < numInput;
+    const isFloat = Math.floor(numInput) < numInput;
     if (isFloat) {
         // console.log("小數!! 請重新輸入");
         // return 2;
