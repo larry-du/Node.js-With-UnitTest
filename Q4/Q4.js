@@ -10,6 +10,8 @@ function sumResult(number) {
     console.log(final)
 }
 
+
+
 function evenSum(n) {
     let sum = 0;
     let result = [];
