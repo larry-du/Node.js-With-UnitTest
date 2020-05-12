@@ -17,7 +17,6 @@ function sumResult(strInput) {
     }
 }
 
-
 function confirmFormat(strInput) {
     const isEmptyString = !strInput.trim().length;
     if (isEmptyString) {
@@ -40,7 +39,7 @@ function confirmFormat(strInput) {
     return "";
 }
 
-function oddEvenSum(strInput) {
+function oddEven(strInput) {
     let valueArr = [];
     for (let i = 2; i <= strInput; i++) {
         if (i % 2 === 0) {
@@ -49,18 +48,21 @@ function oddEvenSum(strInput) {
             valueArr.push(i * -1);
         }
     }
+    return valueArr
+}
+
+function add(strInput) {
+    let OddEvenArr = oddEven(strInput)
     let sum = 1;
-    for (i = 0; i < valueArr.length; i++) {
-        sum += valueArr[i]
+    for (i = 0; i < OddEvenArr.length; i++) {
+        sum += OddEvenArr[i];
     }
-    return {
-        sum,
-        valueArr
-    }
+    return sum;
 }
 
 function equationResult(strInput) {
-    let OddEvenArr = oddEvenSum(strInput).valueArr
+    let addResult = add(strInput)
+    let OddEvenArr = oddEven(strInput)
     let equationArr = [1];
     for (i = 0; i < OddEvenArr.length; i++) {
         if (i % 2 === 0) {
@@ -69,8 +71,7 @@ function equationResult(strInput) {
             equationArr.push(`${OddEvenArr[i]}`)
         }
     }
-
-    return `${equationArr.join("")}=${oddEvenSum(strInput).sum}`
+    return `${equationArr.join("")}=${addResult}`
 }
 
 module.exports = sumResult
