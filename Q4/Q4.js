@@ -19,12 +19,15 @@ function sumResult(strInput) {
 }
 
 function equation(strInput) {
-    let equationArr = [];
+    let equationArr = [1];
     let numInput = Number(strInput)
-    let evenSumLen = evenSum(numInput).result.length - 1
-    for (let i = 0; i <= evenSumLen; i++) {
+    // let evenSumLen = evenSum(numInput).result.length - 1
+    let xxx = Math.floor(strInput / 2)
+    for (let i = 0; i < xxx; i++) {
+
         let plusEven = `+${evenSum(numInput).result[i]}`
         let minusOdd = `-${oddSum(numInput).result[i]}`
+
         equationArr.push(plusEven);
         if (oddSum(numInput).result[i] === undefined) {
             break;
@@ -33,14 +36,14 @@ function equation(strInput) {
     }
     // 印出算式和總和
     let calculationResult = 1 + evenSum(numInput).sum + oddSum(numInput).sum
-    let resultOfEquation = `1${equationArr.join('')} = ${calculationResult}`
+    let resultOfEquation = `${equationArr.join('')} = ${calculationResult}`
+
     return resultOfEquation
 }
 
 function confirmFormat(strInput) {
     const isEmptyString = !strInput.trim().length;
     if (isEmptyString) {
-        // console.log("空字串!! 請重新輸入")
         return "空字串!! 請重新輸入";
     }
     const numInput = Number(strInput);

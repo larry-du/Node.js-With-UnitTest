@@ -40,7 +40,7 @@ test('StringToBeFalse 字串!! 請重新輸入', () => {
     });
 });
 
-test('請輸入一個正整數', () => {
+test('列出算式與總和', () => {
     const strInput = "12";
     const execute = sumResult(strInput);
     expect(execute).toEqual({
