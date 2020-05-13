@@ -1,6 +1,10 @@
 //### 5. 寫一個遞迴函數 `function umleven(n)` 來求算 `2*4 + 4*6 + 6*8...+(n-2)*n`
 function umleven(strInput) {
     confirmFormat(strInput)
+    // 算式與總和function結合
+    // let total = sumOfResult(strInput).num
+    // let printEquation = sumOfResult(strInput).string
+    // 算式與總和function分開
     let total = sumOfResult(strInput)
     let printEquation = equation(strInput)
     return `${printEquation} = ${total}`
@@ -28,16 +32,34 @@ function confirmFormat(strInput) {
         throw new Error("奇數!! 需輸入 4 以上偶數");
     }
 }
+// 算式與總和function結合
+// function sumOfResult(strInput) {
+//     let numInput = Number(strInput)
+//     if (numInput === 4) {
+//         return {
+//             num: (numInput - 2) * numInput,
+//             string: `${(numInput - 2)} * ${numInput}`
+//         }
+//     } else {
+//         return {
+//             num: (numInput - 2) * numInput + sumOfResult(numInput - 2).num,
+//             string: `${sumOfResult(numInput - 2).string} + ${`${(numInput - 2)} * ${numInput}`}`
+//         }
 
+//     }
+// }
+
+
+// 算式與總和function分開
 function sumOfResult(strInput) {
     let numInput = Number(strInput)
     if (numInput === 4) {
         return (numInput - 2) * numInput
     } else {
-        return (numInput - 2) * numInput + sumOfResult(numInput - 2)
+        return sumOfResult(numInput - 2) + (numInput - 2) * numInput
     }
-}
 
+}
 function equation(strInput) {
     let numInput = Number(strInput)
     if (numInput === 4) {
@@ -45,7 +67,6 @@ function equation(strInput) {
     } else {
         return `${equation(numInput - 2)} + ${(numInput - 2)} * ${numInput}`
     }
-
 }
 module.exports = umleven
-// console.log(umleven(8))
+
