@@ -1,4 +1,4 @@
-const { main } = require("./Q6")
+const { main } = require("./Q6-module")
 const rl = require("./readline");
 (function askName1(rl) {
     rl.question('請輸入第一個名字:', strInput1 => {

@@ -1,6 +1,6 @@
 //### 4. 輸入 n 印出 `1+2-3+4-5+6...n` 的算式與總和
 // 輸入n
-const sumResult = require("./Q4")
+const sumResult = require("./Q4-module")
 const rl = require("./readline");
 
 (function askQuestion(rl) {

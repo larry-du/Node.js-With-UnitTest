@@ -32,7 +32,7 @@ function confirmFormat(strInput) {
         throw new Error("奇數!! 需輸入 4 以上偶數");
     }
 }
-// 算式與總和function結合
+// 算式與總和function結合,需注意兩組return需return一樣的東西
 // function sumOfResult(strInput) {
 //     let numInput = Number(strInput)
 //     if (numInput === 4) {

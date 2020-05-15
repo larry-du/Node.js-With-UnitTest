@@ -6,8 +6,8 @@ const main = {
 }
 
 function confirmFormat(strInput) {
-    const reg = /^[A-z]+$/g;
-    if (!reg.test(strInput)) {
+    const reg = /[^a-z]^\s{0}$/ig;
+    if (reg.test(strInput)) {
         throw new Error("請輸入英文字")
     }
     main.name.push(strInput)

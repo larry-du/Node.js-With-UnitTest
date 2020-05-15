@@ -47,5 +47,25 @@
             "program": "${workspaceFolder}/Q3/discountInterface.js",
             "console": "integratedTerminal"
         },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q5",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q5/interface.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q6",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q6/interface.js",
+            "console": "integratedTerminal"
+        },
     ]
 }

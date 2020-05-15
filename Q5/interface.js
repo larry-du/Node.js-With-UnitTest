@@ -1,4 +1,4 @@
-const umleven = require('./Q5')
+const umleven = require('./Q5-module')
 const rl = require('./readline');
 
 (function askQuestion(rl) {

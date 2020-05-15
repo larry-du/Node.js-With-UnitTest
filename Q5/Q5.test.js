@@ -35,6 +35,6 @@ describe('非正常情況ˋ', () => {
 
 describe('正常情況ˋ', () => {
     test('請輸入 4 以上偶數', () => {
-        expect(umleven('8')).toMatch("2 * 4 + 4 * 6  + 6 * 8  = 80");
+        expect(umleven('8')).toMatch("2 * 4 + 4 * 6 + 6 * 8 = 80");
     });
 });
