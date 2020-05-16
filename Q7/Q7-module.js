@@ -9,13 +9,11 @@
 //    ***
 //     *
 // ```
-function main(strInput) {
-    let numInput = Number(strInput);
+function main(numInput) {
     let starNormal = printStar(numInput);
     let completeNormalStar = clearFormat(starNormal);
     let turnStar = starTurnRight(starNormal);
     let completeTurnStar = clearFormat(turnStar);
-
     return {
         completeNormalStar,
         completeTurnStar
@@ -49,13 +47,13 @@ function printStar(height) {
 }
 
 function starTurnRight(starNormal) {
-    let row = starNormal[0].length;
-    let col = starNormal.length;
+    let starTurnRightRow = starNormal[0].length;
+    let starTurnRightCol = starNormal.length;
     let resultOfTurnStar = [];
-    for (let i = 0; i < row; i++) {
-        resultOfTurnStar[i] = [];
-        for (let j = 0; j < col; j++) {
-            resultOfTurnStar[i][j] = starNormal[j][i]
+    for (let row = 0; row < starTurnRightRow; row++) {
+        resultOfTurnStar[row] = [];
+        for (let col = 0; col < starTurnRightCol; col++) {
+            resultOfTurnStar[row][col] = starNormal[col][row]
         }
     }
     return resultOfTurnStar;
