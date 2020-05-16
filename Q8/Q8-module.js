@@ -7,8 +7,8 @@ function main(strInput) {
 
 function divi(index, number) {
     let dividedByThree = number / 3;
-    let roundDownThirdPlace = Math.floor(dividedByThree * 100);
-    if (roundDownThirdPlace === 0) {
+    let roundDownSecondPlace = Math.floor(dividedByThree * 100);
+    if (roundDownSecondPlace === 0) {
         return index;
     } else {
         return divi(index + 1, dividedByThree);
