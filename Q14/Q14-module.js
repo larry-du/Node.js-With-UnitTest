@@ -2,18 +2,15 @@ function main(strInput) {
     confirmFormat(strInput);
     let m = Number(strInput);
     let bacterial = 1;
-    let multiple = Math.floor(m / 20) * 2;
-    return twofold(bacterial, multiple)
+    return twofold(bacterial, m)
 }
 
-function twofold(bacterial, multiple) {
-    if (multiple < 1) {
+function twofold(bacterial, m) {
+    let multiple = Math.floor(m / 20);
+    if (multiple === 0) {
         return bacterial;
     }
-    if (bacterial === Math.floor(multiple)) {
-        return bacterial;
-    }
-    return twofold(bacterial + 1, multiple)
+    return twofold(bacterial * 2, m - 20)
 }
 
 function confirmFormat(strInput) {
@@ -22,6 +19,9 @@ function confirmFormat(strInput) {
     }
     if (Number.isNaN(Number(strInput))) {
         throw new Error("字串!!請重新輸入");
+    }
+    if (strInput.search("e") > 0) {
+        throw new Error("有e會爆!!請重新輸入")
     }
     let numInput = Number(strInput);
     if (numInput < 0) {
