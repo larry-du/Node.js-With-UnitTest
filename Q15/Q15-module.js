@@ -2,29 +2,49 @@
 function main() {
     let sum = 0;
     return totalWeight(sum);
-}
+};
 
+const sport = [
+    { name: "啞鈴", weight: 30 },
+    { name: "單槓", weight: 20 },
+    { name: "跑步機", weight: 50 }
+];
+
+let quantityArray = []
 function totalWeight(sum) {
     let random = randomProduce();
-    let sport = [30, 20, 50];
-    sum = sum + sport[random]
+    let sportRandom = sport[random];
+    quantityArray.push(random);
+    sum += sportRandom.weight;
     if (sum >= 1000) {
         return sum
     }
     return totalWeight(sum)
-}
+};
 
 function randomProduce() {
     let random = Math.floor(Math.random() * 3);
     return random
-}
+};
 
-console.log(main())
-// function counter() {
+
+
+
+console.log(main());
+// console.log(arr);
+console.log(quantityArray.filter(function (value) {
+    return value === 0
+}).length);
+console.log(quantityArray.filter(function (value) {
+    return value === 1
+}).length);
+console.log(quantityArray.filter(function (value) {
+    return value === 2
+}).length);
+// function counter(random) {
 //     let dumbbells = [];
 //     let horizontalBar = [];
 //     let Treadmill = [];
-//     let random = randomProduce()
 //     if (random === 0) {
 //         dumbbells.push(random);
 //     }
@@ -34,9 +54,9 @@ console.log(main())
 //     if (random === 2) {
 //         Treadmill.push(random);
 //     }
-//     console.log(dumbbells.length)
-//     console.log(horizontalBar.length)
-//     console.log(Treadmill.length)
+//     console.log(dumbbells)
+//     console.log(horizontalBar)
+//     console.log(Treadmill)
 // }
-
+// console.log(counter())
 
