@@ -29,8 +29,8 @@ function votes() {
 
 function sum(totalArray) {
     let result = [];
-    for (let i = 0; i < totalArray.length; i++) {
-        result.push(totalArray[i].reduce(sumTotal, 0));
+    for (let indexOfTotalArray = 0; indexOfTotalArray < totalArray.length; indexOfTotalArray++) {
+        result.push(totalArray[indexOfTotalArray].reduce(sumTotal, 0));
     };
     return result;
 };
