@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589379227181" clover="3.2.0">
-  <project timestamp="1589379227181" name="All files">
-    <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2" elements="29" coveredelements="29" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
-    <file name="Q6.js" path="/Users/lun0422/GoodIdeas/j1/Q6/Q6.js">
-      <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="9" count="7" type="stmt"/>
-      <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="3" type="stmt"/>
-      <line num="14" count="4" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="23" count="2" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="27" count="5" type="cond" truecount="2" falsecount="0"/>
-      <line num="28" count="3" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="33" count="3" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="39" count="1" type="stmt"/>
+<coverage generated="1603096538210" clover="3.2.0">
+  <project timestamp="1603096538210" name="All files">
+    <metrics statements="19" coveredstatements="19" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3" elements="36" coveredelements="36" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
+    <file name="Q16-module.js" path="/Users/lun0422/GoodIdeas/j1/Q16/Q16-module.js">
+      <metrics statements="19" coveredstatements="19" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
+      <line num="2" count="9" type="stmt"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="15" type="stmt"/>
+      <line num="11" count="15" type="cond" truecount="4" falsecount="0"/>
+      <line num="12" count="8" type="stmt"/>
+      <line num="14" count="15" type="cond" truecount="4" falsecount="0"/>
+      <line num="15" count="7" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="22" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="28" count="6" type="stmt"/>
+      <line num="29" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

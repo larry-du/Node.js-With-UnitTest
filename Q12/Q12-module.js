@@ -40,7 +40,7 @@ function multiple(isPrimeArray) {
 function printResult(result, isPrimeArray) {
     let final = []
     for (let setType = 0; setType < isPrimeArray.length; setType++) {
-        final.push(`質數:${isPrimeArray[setType]}->1~100倍數為:${result[setType]}`)
+        final.push(`質數:${isPrimeArray[setType]}->1~100倍數為:${result[setType]}`);
     }
     return `${final.join("\n")}`
 }

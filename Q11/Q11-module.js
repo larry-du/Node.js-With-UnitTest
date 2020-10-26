@@ -5,19 +5,22 @@ function main(strInput) {
 }
 
 function money(strInput) {
-    let period = Number(strInput)
-    let membershipFees = 0;
+    let period = Number(strInput);
+    let totalMoney = 0;
+    let membershipFee = 500;
     let counter = 0;
-    let extraDiscount = Math.floor(period / 5)
-    const firstDiscount = 500 * 0.79;
+    let firstFold = 0.79;
+    let secondFold = 200;
+    let extraDiscount = Math.floor(period / 5);
+    const firstDiscount = membershipFee * firstFold;
     if (period === 1) {
-        return firstDiscount
+        return firstDiscount;
     }
     do {
-        membershipFees = membershipFees + 500;
+        totalMoney = totalMoney + membershipFee;
         counter++;
     } while (counter < period - 1);
-    return membershipFees + firstDiscount - (200 * extraDiscount);
+    return totalMoney + firstDiscount - (secondFold * extraDiscount);
 }
 
 function confirmFormat(strInput) {

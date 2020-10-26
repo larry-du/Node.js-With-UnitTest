@@ -43,6 +43,7 @@ function printStar(height) {
         }
         rowArray.push(colArray);
     }
+    // console.log(rowArray)
     return rowArray;
 }
 
@@ -60,9 +61,12 @@ function starTurnRight(starNormal) {
 }
 
 function clearFormat(completeStar) {
-    let clearSpace = completeStar.join('\n');
-    let resultOfClearFormat = clearSpace.replace(/,/g, "");
-    return resultOfClearFormat;
+    let clearSpace = completeStar.map(function (stars) {
+        return stars.join(" ")
+    });
+    // console.log(clearSpace)
+    let resultOfClearFormat = clearSpace.join("\n")
+    return resultOfClearFormat
+    // let resultOfClearFormat = clearSpace.replace(/,/g, "");
 }
-
 module.exports = main

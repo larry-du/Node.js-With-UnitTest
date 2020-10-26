@@ -33,6 +33,7 @@
                 "${workspaceRoot}/node_modules/.bin/jest",
                 "--runInBand"
             ],
+            "program": "${workspaceRoot}/Q14/Q14.test.js",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "port": 9229
@@ -65,6 +66,46 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/Q6/interface.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q7-1",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q7/Q7-1.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q8",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q8/Q8.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q14",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q14/interface.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Q15",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Q15/Q15-module.js",
             "console": "integratedTerminal"
         },
     ]

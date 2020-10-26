@@ -1,4 +1,4 @@
-const main = require("./Q3")
+const main = require("./Q3-module")
 
 test("空字串!! 請重新輸入", () => {
     expect(() => {

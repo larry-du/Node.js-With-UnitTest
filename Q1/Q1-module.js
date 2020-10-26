@@ -19,11 +19,6 @@ function main(strInput) {
     }
 }
 
-// let obj = {
-//     0: "空字串!! 請重新輸入",
-//     1: "負數!! 請重新輸入"
-// }
-
 function confirmFormat(strInput) {
     const isEmptyString = !strInput.trim().length;
     if (isEmptyString) {
@@ -49,7 +44,6 @@ function confirmFormat(strInput) {
     if (isString) {
         // console.log("字串!! 請重新輸入");
         return "字串!! 請重新輸入";
-
     }
     return "";
 }
